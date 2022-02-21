@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Food App</string>
+    <string name="next">Next</string>
+    <string name="welcome">Welcome to Food-E</string>
+    <string name="local">local</string>
+    <string name="food">food</string>
+    <string name="awesome">Awesome</string>
+    <string name="get">get</string>
+    <string name="started">started</string>
+    <string name="info_get_started">Get started and enjoy the awesome local food right at your home.</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="have_an_account">Already have an account?</string>
+    <string name="example_phone">+7(981)878–81–01</string>
+    <string name="example_email">johndoe@email.com</string>
+    <string name="example_name">Osvin Osvald</string>
+    <string name="no_account">Don’t have an account?</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="info_forgot_password">We’ll send a password reset link to your email.</string>
+    <string name="open_email_app">Open email App</string>
+    <string name="info_sent_an_email">We’ve sent you an email at</string>
+    <string name="resend">Resend</string>
+    <string name="not_receive_the_email">Did not receive the email yet?</string>
+    <string name="example_time">00:38</string>
+    <string name="info_sent_an_email2">for verification. Check your email for the verification link.</string>
+    <string name="reset_password">Reset password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="new_password">New password</string>
+</resources>
