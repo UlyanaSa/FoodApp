@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragment.AuthorizationFragment">
 
     <ImageView
         android:id="@+id/food_logo2"
@@ -13,7 +14,7 @@
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/food_black_logo"/>
+        app:srcCompat="@drawable/food_black_logo" />
 
     <TextView
         android:id="@+id/t_get"
