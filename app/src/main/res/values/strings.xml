@@ -5,19 +5,19 @@
     <string name="local">local</string>
     <string name="food">food</string>
     <string name="awesome">Awesome</string>
-    <string name="get">get</string>
+    <string name="get">Get</string>
     <string name="started">started</string>
     <string name="info_get_started">Get started and enjoy the awesome local food right at your home.</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="full_name">Full name</string>
+    <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="password">Password</string>
     <string name="have_an_account">Already have an account?</string>
     <string name="example_phone">+7(981)878–81–01</string>
     <string name="example_email">johndoe@email.com</string>
-    <string name="example_name">Osvin Osvald</string>
+    <string name="example_name">Osvin</string>
     <string name="no_account">Don’t have an account?</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="info_forgot_password">We’ll send a password reset link to your email.</string>
@@ -32,4 +32,8 @@
     <string name="new_password">New password</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enter_name">Please enter name</string>
+    <string name="please_enter_email">Please enter email</string>
+    <string name="please_enter_phone">Please enter phone</string>
+    <string name="please_enter_password">Please enter password</string>
 </resources>

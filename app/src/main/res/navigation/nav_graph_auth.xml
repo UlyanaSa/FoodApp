@@ -10,7 +10,7 @@
         android:label="fragment_authorization"
         tools:layout="@layout/fragment_authorization" >
         <action
-            android:id="@+id/action_auF_to_loginFragment"
+            android:id="@+id/action_authorization_to_login"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_authorization_to_register"
@@ -42,18 +42,24 @@
         android:name="com.osvin.foodapp.presentation.fragment.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
+
         <action
             android:id="@+id/action_register_to_login"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_register_to_emailSent"
-            app:destination="@id/emailSentFragment" />
+            app:destination="@id/emailSentFragment" >
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/emailSentFragment"
         android:name="com.osvin.foodapp.presentation.fragment.EmailSentFragment"
         android:label="fragment_email_sent"
         tools:layout="@layout/fragment_email_sent" >
+        <argument
+            android:name="email"
+            app:argType="string" />
         <action
             android:id="@+id/action_emailSent_to_login"
             app:destination="@id/loginFragment" />
