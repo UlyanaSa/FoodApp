@@ -36,4 +36,32 @@
     <string name="please_enter_email">Please enter email</string>
     <string name="please_enter_phone">Please enter phone</string>
     <string name="please_enter_password">Please enter password</string>
+    <string name="hello">Hello,</string>
+    <string name="example_location">Home</string>
+    <string name="example_stock">GET 50% AS A Joining Bonus</string>
+    <string name="use_code_on_checkout">use code on checkout</string>
+    <string name="example_code">NEW50</string>
+    <string name="recommended_for_you">Recommended for you</string>
+    <string name="example_name_food">Egg Salad</string>
+    <string name="example_price">$5.00</string>
+    <string name="restaurants">RESTAURANTS</string>
+    <string name="popular_in_your_area">POPULAR IN YOUR AREA</string>
+    <string name="email_sent">Email sent</string>
+    <string name="incorrect_data">Incorrect data</string>
+    <string name="successful_registration">Successful registration</string>
+    <string name="data_saved">Data saved</string>
+    <string name="example_name_restaurant">The Nautilus</string>
+    <string name="description">DESCRIPTION</string>
+    <string name="info_food">Non odit iusto delectus maxime sit placeat voluptatum dolorem. Dolores quos rerum iusto. Beatae totam ab veritatis aliquid tenetur qui ut. Quia ut dolorum enim et. Exercitationem occaecati eum est ex qui harum aliquam.</string>
+    <string name="quantity">QUANTITY</string>
+    <string name="example_count">1</string>
+    <string name="sub_total">SUB TOTAL</string>
+    <string name="add_to_basket">ADD TO BASKET</string>
+    <string name="basket">basket</string>
+    <string name="total">total</string>
+    <string name="proceed_to_checkout">PROCEED TO CHECKOUT</string>
+    <string name="liked">LIKED</string>
+    <string name="please_wait">Please wait...</string>
+
+
 </resources>

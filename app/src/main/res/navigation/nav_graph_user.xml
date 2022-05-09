@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_user"
+    app:startDestination="@id/userMainFragment">
+
+    <fragment
+        android:id="@+id/userMainFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.user.UserMainFragment"
+        android:label="UserMainFragment" >
+        <action
+            android:id="@+id/action_userMainFragment_to_profileDataFragment"
+            app:destination="@id/profileDataFragment" />
+        <action
+            android:id="@+id/action_userMainFragment_to_orderHistoryFragment"
+            app:destination="@id/orderHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileDataFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.user.ProfileDataFragment"
+        android:label="fragment_profile_data"
+        tools:layout="@layout/fragment_profile_data" />
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.user.OrderHistoryFragment"
+        android:label="fragment_order_history"
+        tools:layout="@layout/fragment_order_history" />
+</navigation>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.RegisterFragment">
+    android:id="@+id/main_layout"
+    tools:context=".presentation.fragment.auth.RegisterFragment">
 
 
 
@@ -87,7 +88,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/t_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -196,6 +197,9 @@
             android:autofillHints="name"
             android:textColorHint="@color/gray"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

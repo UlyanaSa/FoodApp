@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.AuthorizationFragment">
+    tools:context=".presentation.fragment.auth.AuthorizationFragment">
 
     <ImageView
         android:id="@+id/food_logo2"
@@ -56,28 +56,30 @@
 
     <Button
         android:id="@+id/b_login_gs"
+        style="@style/DefultSolid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="652dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        style="@style/DefultSolid"
+        android:layout_marginBottom="150dp"
         android:text="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/b_register_gs"
+        style="@style/DefultOutline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/DefultOutline"
-        android:layout_marginTop="722dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/b_login_gs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

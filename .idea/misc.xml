@@ -4,27 +4,64 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/bottom_indicator.xml" value="0.2095" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/ic_home.xml" value="0.175" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/ic_likes_dark.xml" value="0.175" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/ic_likes_white.xml" value="0.175" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/ic_plus.xml" value="0.175" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/image.xml" value="0.175" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/image_button.xml" value="0.152" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/input_number_food.xml" value="0.175" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/rounded.xml" value="0.2095" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/drawable/rounded_list_foods.xml" value="0.2095" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_authorization.xml" value="0.2" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_container_auth.xml" value="0.1" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_container_main.xml" value="0.2" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_email_sent.xml" value="0.2" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_login.xml" value="0.136" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_reset_password.xml" value="0.176" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/activity_start.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/bottom_home_menu.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/bottom_indicator.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/dialog_progress.xml" value="0.264" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_authorization.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_basket.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_checkout.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_container.xml" value="0.1" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_deliver_to.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_email_sent.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_food_item.xml" value="0.264" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_forgot_password.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_likes.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_login.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_my_payment.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_order_history.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_profile_data.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_register.xml" value="0.2" />
-        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_reset_password.xml" value="0.21981981981981982" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_reset_password.xml" value="0.25" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_restaurant.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_search.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_success_payment.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_unsuccessful_payment.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/fragment_user_main.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/get_started.xml" value="0.2" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/list_food_basket.xml" value="0.4" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/list_food_like.xml" value="0.34782608695652173" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/list_foods.xml" value="0.40587449933244324" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/list_restaurants.xml" value="0.6" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/on_boading.xml" value="0.2" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/register_activity.xml" value="0.21981981981981982" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/layout/stock_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/menu/bottom_home_menu.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/Ulyana/FoodApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>

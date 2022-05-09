@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_margin="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/t_name_food"
+            style="@style/BodyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/example_name_food"
+            android:textColor="@color/dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.39"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t_price"
+            style="@style/HeardingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/example_price"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.284"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t_name_food" />
+
+        <ImageButton
+            android:id="@+id/b_trash_food"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/container_ic_trash"
+            android:src="@drawable/ic_trash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.887"
+            app:layout_constraintStart_toEndOf="@+id/t_name_food"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.137" />
+
+
+        <ImageButton
+            android:id="@+id/b_add_to_basket"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/container_ic_basket"
+            android:src="@drawable/ic_basket_white"
+            app:layout_constraintEnd_toEndOf="@+id/b_trash_food"
+            app:layout_constraintStart_toStartOf="@+id/b_trash_food"
+            app:layout_constraintTop_toBottomOf="@+id/b_trash_food" />
+
+        <ImageButton
+            android:id="@+id/b_basket"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/container_ic_basket"
+            android:src="@drawable/ic_basket_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_food"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/food_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="10dip" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

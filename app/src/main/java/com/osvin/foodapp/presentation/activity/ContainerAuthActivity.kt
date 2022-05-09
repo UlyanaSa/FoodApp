@@ -1,34 +1,38 @@
 package com.osvin.foodapp.presentation.activity
 
+
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import com.google.android.material.navigation.NavigationView
 import com.osvin.foodapp.R
-import com.osvin.foodapp.databinding.ActivityContainerAuthBinding
+
 
 
 
 class ContainerAuthActivity : AppCompatActivity() {
+    private val TAG = "ContainerAuthActivity"
    // private lateinit var binding: ActivityContainerAuthBinding
+    // не работает навигация норм с вьюбандингом
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //binding = ActivityContainerAuthBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_container_auth)
-        var navAuthHost = supportFragmentManager.findFragmentById(R.id.fragment_nav_host) as NavHostFragment
+        val navAuthHost = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navAuthHost.navController
 
-     //   Navigation.setViewNavController(,navController)
-      //  NavigationUI.setupActionBarWithNavController(this,navController)
-
-
     }
-
-
+//    fun showProgressDialog() {
+//        progressDialog = Dialog(this)
+//        progressDialog.setContentView(R.layout.dialog_progress)
+//        progressDialog.setCancelable(false) // нельзя избавиться нажатие на него
+//        progressDialog.setCanceledOnTouchOutside(false) // снаружи
+//        progressDialog.show()
+//    }
+//    fun hideProgressDialog() {
+//        progressDialog.dismiss()
+//    }
 }

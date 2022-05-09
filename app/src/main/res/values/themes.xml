@@ -17,6 +17,7 @@
     <style name="BodyText" >
         <item name="android:fontFamily">@font/montserrat</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="HeardingText">
@@ -41,5 +42,16 @@
         <item name="android:color">@color/primary_light</item>
         <item name="backgroundTint">@color/primary_dark</item>
         <item name="fontFamily">@font/bebas_neue</item>
+    </style>
+
+    <style name="My.ImageButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+        <item name="android:color">@color/primary_light</item>
+        <item name="iconSize">22dp</item>
+    </style>
+
+    <style name="CircularProgressBar" parent="Widget.Material3.CircularProgressIndicator.Medium">
+        <item name="colorAccent">@color/primary_light</item>
     </style>
 </resources>

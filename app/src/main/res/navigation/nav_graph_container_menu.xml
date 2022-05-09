@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_container_menu"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_foodItemFragment"
+            app:destination="@id/foodItemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodItemFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.FoodItemFragment"
+        android:label="fragment_food_item"
+        tools:layout="@layout/fragment_food_item" />
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.RestaurantFragment"
+        android:label="fragment_restaurant"
+        tools:layout="@layout/fragment_restaurant" />
+
+    <fragment
+        android:id="@+id/likesFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.likes.LikesFragment"
+        android:label="LikesFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.search.SearchFragment"
+        android:label="SearchFragment" />
+
+
+    <navigation android:id="@+id/navigation_basket"
+        app:startDestination="@id/basketFragment">
+        <fragment
+            android:id="@+id/deliverToFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.DeliverToFragment"
+            android:label="fragment_deliver_to"
+            tools:layout="@layout/fragment_deliver_to">
+            <action
+                android:id="@+id/action_deliverToFragment_to_addNewAddressFragment"
+                app:destination="@id/addNewAddressFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/successPaymentFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.SuccessPaymentFragment"
+            android:label="fragment_success_payment"
+            tools:layout="@layout/fragment_success_payment" />
+        <fragment
+            android:id="@+id/basketFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.BasketFragment"
+            android:label="fragment_basket"
+            tools:layout="@layout/fragment_basket">
+            <action
+                android:id="@+id/action_basketFragment_to_checkoutFragment"
+                app:destination="@id/checkoutFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/myPaymentFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.MyPaymentFragment"
+            android:label="fragment_my_payment"
+            tools:layout="@layout/fragment_my_payment">
+            <action
+                android:id="@+id/action_myPaymentFragment_to_addNewCardFragment"
+                app:destination="@id/addNewCardFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/unsuccessfulPaymentFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.UnsuccessfulPaymentFragment"
+            android:label="fragment_unsuccessful_payment"
+            tools:layout="@layout/fragment_unsuccessful_payment" />
+        <fragment
+            android:id="@+id/checkoutFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.CheckoutFragment"
+            android:label="fragment_checkout"
+            tools:layout="@layout/fragment_checkout">
+            <action
+                android:id="@+id/action_checkoutFragment_to_deliverToFragment"
+                app:destination="@id/deliverToFragment" />
+            <action
+                android:id="@+id/action_checkoutFragment_to_myPaymentFragment"
+                app:destination="@id/myPaymentFragment" />
+            <action
+                android:id="@+id/action_checkoutFragment_to_unsuccessfulPaymentFragment"
+                app:destination="@id/unsuccessfulPaymentFragment" />
+            <action
+                android:id="@+id/action_checkoutFragment_to_successPaymentFragment"
+                app:destination="@id/successPaymentFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addNewAddressFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.AddNewAddressFragment"
+            android:label="fragment_add_new_address"
+            tools:layout="@layout/fragment_add_new_address" />
+        <fragment
+            android:id="@+id/addNewCardFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.basket.AddNewCardFragment"
+            android:label="fragment_add_new_card"
+            tools:layout="@layout/fragment_add_new_card" />
+    </navigation>
+    <navigation android:id="@+id/navigation_user"
+        app:startDestination="@id/userMainFragment">
+        <fragment
+            android:id="@+id/profileDataFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.user.ProfileDataFragment"
+            android:label="fragment_profile_data"
+            tools:layout="@layout/fragment_profile_data" />
+        <fragment
+            android:id="@+id/userMainFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.user.UserMainFragment"
+            android:label="UserMainFragment">
+            <action
+                android:id="@+id/action_userMainFragment_to_profileDataFragment"
+                app:destination="@id/profileDataFragment" />
+            <action
+                android:id="@+id/action_userMainFragment_to_orderHistoryFragment"
+                app:destination="@id/orderHistoryFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/orderHistoryFragment"
+            android:name="com.osvin.foodapp.presentation.fragment.user.OrderHistoryFragment"
+            android:label="fragment_order_history"
+            tools:layout="@layout/fragment_order_history" />
+    </navigation>
+</navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_foodItemFragment"
+            app:destination="@id/foodItemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodItemFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.FoodItemFragment"
+        android:label="fragment_food_item"
+        tools:layout="@layout/fragment_food_item" />
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.osvin.foodapp.presentation.fragment.home.RestaurantFragment"
+        android:label="fragment_restaurant"
+        tools:layout="@layout/fragment_restaurant" />
+</navigation>
