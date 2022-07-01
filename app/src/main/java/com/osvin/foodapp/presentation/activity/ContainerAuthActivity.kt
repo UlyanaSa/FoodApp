@@ -7,10 +7,10 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.osvin.foodapp.R
+import dagger.hilt.android.AndroidEntryPoint
 
 
-
-
+//@AndroidEntryPoint
 class ContainerAuthActivity : AppCompatActivity() {
     private val TAG = "ContainerAuthActivity"
    // private lateinit var binding: ActivityContainerAuthBinding
@@ -24,15 +24,7 @@ class ContainerAuthActivity : AppCompatActivity() {
         val navAuthHost = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navAuthHost.navController
 
+
     }
-//    fun showProgressDialog() {
-//        progressDialog = Dialog(this)
-//        progressDialog.setContentView(R.layout.dialog_progress)
-//        progressDialog.setCancelable(false) // нельзя избавиться нажатие на него
-//        progressDialog.setCanceledOnTouchOutside(false) // снаружи
-//        progressDialog.show()
-//    }
-//    fun hideProgressDialog() {
-//        progressDialog.dismiss()
-//    }
+
 }

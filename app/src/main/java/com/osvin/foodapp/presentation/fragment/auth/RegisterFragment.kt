@@ -12,23 +12,24 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
-import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
 import com.osvin.foodapp.R
-import com.osvin.foodapp.data.firestore.Firestore
-import com.osvin.foodapp.databinding.FragmentRegisterBinding
 import com.osvin.foodapp.data.models.User
+import com.osvin.foodapp.databinding.FragmentRegisterBinding
+import com.osvin.foodapp.data.repository.AuthorizationRepository
+import com.osvin.foodapp.presentation.viewModel.AuthViewModel
+import com.osvin.foodapp.presentation.viewModel.AuthViewModelFactory
 
-
+//@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     private lateinit var binding:FragmentRegisterBinding
     private lateinit var progressDialog: Dialog
+    private lateinit var authViewModelFactory: AuthViewModelFactory
+    private lateinit var authViewModel: AuthViewModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,23 +40,34 @@ class RegisterFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var app = activity!!.application
+        authViewModel = ViewModelProvider(this, AuthViewModelFactory(app)).get(AuthViewModel::class.java)
+
         val editPhone = binding.edtPhone
         validatePhone(editPhone)
+        var name = binding.edtNameAc.text.toString().trim(' ')
+        var email = binding.edtEmailAc.text.toString().trim(' ')
+        var phone = binding.edtPhone.text.toString().trim(' ')
+        var password = binding.edtPasswordAr.text.toString().trim(' ')
 
-        val name = binding.edtNameAc.text.toString().trim(' ')
-        val email = binding.edtEmailAc.text.toString().trim(' ')
-        val phone = binding.edtPhone.text.toString().trim(' ')
-        val password = binding.edtPasswordAr.text.toString().trim(' ')
-
-        //убираем фокус с объектов ввода
+        var user = User(email = email, name = name, phone = phone, password = password)
+        authViewModel.register(user)
+        authViewModel.resultRegister.observe(viewLifecycleOwner, Observer{
+            if(it){
+                findNavController().navigate(R.id.action_register_to_login)
+            }else Log.e(TAG, "onViewCreated: register", )
+        })
+                //убираем фокус с объектов ввода
         binding.bRegisterAr.setOnClickListener {
             binding.edtNameAc.clearFocus()
             binding.edtEmailAc.clearFocus()
             binding.edtPasswordAr.clearFocus()
             binding.edtPhone.clearFocus()
 
-            registerUser()
-        }
+
+            }
+
+
         binding.tLogin.setOnClickListener {
            findNavController().navigate(R.id.action_register_to_login)
         }
@@ -118,47 +130,7 @@ class RegisterFragment : Fragment() {
         return mSelfChange
     }
 
-    private fun registerUser() {
 
-        val email = binding.edtEmailAc.text.toString().trim(' ')
-        val password = binding.edtPasswordAr.text.toString().trim(' ')
-        val phone = binding.edtPhone.text.toString().trim(' ')
-        val name = binding.edtNameAc.text.toString().trim(' ')
-
-        val auth = FirebaseAuth.getInstance()
-        if (email.isNotEmpty() && password.isNotEmpty()) {
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-
-                        Toast.makeText(context, SUCCESS_REGISTRATION, Toast.LENGTH_SHORT).show()
-                        val firebaseUser: FirebaseUser = task.result!!.user!!
-                        val userUid = firebaseUser.uid
-                        val user = User(email = email, password = password, name = name, phone = phone, id = userUid)
-                        val firestore = Firestore()
-                        if(firestore.registerUser(user)){
-                            Toast.makeText(context, DATA_SAVED, Toast.LENGTH_SHORT).show()
-                        }else{
-                            Log.e(TAG, "registerUser: Error while register the user")
-                        }
-                        firebaseUser?.sendEmailVerification()?.addOnCompleteListener { task ->
-                            if(task.isSuccessful){
-                                Toast.makeText(context,EMAIL_SENT, Toast.LENGTH_SHORT).show()
-
-                            }else{
-                                Log.e(TAG, "registerUser: ${task.exception}")
-                                }
-                        }
-                    } else {
-                        Toast.makeText(context, INCORRECT_DATA, Toast.LENGTH_SHORT).show()
-                    }
-                }
-        }
-        auth.signOut()
-
-        findNavController().navigate(R.id.action_register_to_login)
-    }
 
     private fun hideKeyboardFrom(context: Context, view: View?) {
         val imm =
@@ -179,10 +151,8 @@ class RegisterFragment : Fragment() {
 
     companion object {
         const val TAG = "RegisterFragment"
-        const val EMAIL_SENT = R.string.email_sent
-        const val INCORRECT_DATA = R.string.incorrect_data
-        const val SUCCESS_REGISTRATION = R.string.successful_registration
-        const val DATA_SAVED = R.string.data_saved
+
     }
 
 }
+

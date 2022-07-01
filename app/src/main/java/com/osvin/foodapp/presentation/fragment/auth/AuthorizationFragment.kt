@@ -11,8 +11,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.osvin.foodapp.R
 import com.osvin.foodapp.databinding.FragmentAuthorizationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+//@AndroidEntryPoint
 class AuthorizationFragment : Fragment() {
 
     private lateinit var binding:FragmentAuthorizationBinding

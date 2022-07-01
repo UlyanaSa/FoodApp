@@ -10,8 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.osvin.foodapp.R
 import com.osvin.foodapp.databinding.FragmentForgotPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+//@AndroidEntryPoint
 class ForgotPasswordFragment : Fragment() {
     private lateinit var binding: FragmentForgotPasswordBinding
     private val TAG = "ForgotPasswordFragment"

@@ -37,22 +37,24 @@ class Firestore {
         return result
     }
 
-    fun getUserDetailis (fragment: Fragment){
+    fun getUserDetailis ():User{
+        var user = User()
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserId())
             .get()
             .addOnSuccessListener { document ->
                 Log.i(TAG, "getUserDetailis: ${document.toString()}")
 
-                val user = document.toObject(User::class.java) // преобразовали в объект класса юзер
-                when(fragment){
-                    is LoginFragment -> {
-                        if (user != null) {
-                            fragment.userLoggedInSuccess(user = user)
-                        }
-                    }
-                }
+                 user = document.toObject(User::class.java)!! // преобразовали в объект класса юзер
+//                when(fragment){
+//                    is LoginFragment -> {
+//                        if (user != null) {
+//                            fragment.userLoggedInSuccess(user = user)
+//                        }
+//                    }
+//                }
             }
+        return user
     }
 
   //  fun savePhoto(photo: )
