@@ -8,22 +8,15 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
 import com.osvin.foodapp.R
-import com.osvin.foodapp.data.firestore.Firestore
 import com.osvin.foodapp.data.models.User
-import com.osvin.foodapp.data.repository.AuthorizationRepository
 import com.osvin.foodapp.databinding.FragmentLoginBinding
 import com.osvin.foodapp.presentation.activity.ContainerMainActivity
 import com.osvin.foodapp.presentation.viewModel.AuthViewModel
 import com.osvin.foodapp.presentation.viewModel.AuthViewModelFactory
-import dagger.hilt.android.AndroidEntryPoint
 
 //@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {

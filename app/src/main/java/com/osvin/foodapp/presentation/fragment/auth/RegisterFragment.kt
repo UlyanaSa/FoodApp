@@ -19,7 +19,6 @@ import com.google.android.material.textfield.TextInputEditText
 import com.osvin.foodapp.R
 import com.osvin.foodapp.data.models.User
 import com.osvin.foodapp.databinding.FragmentRegisterBinding
-import com.osvin.foodapp.data.repository.AuthorizationRepository
 import com.osvin.foodapp.presentation.viewModel.AuthViewModel
 import com.osvin.foodapp.presentation.viewModel.AuthViewModelFactory
 

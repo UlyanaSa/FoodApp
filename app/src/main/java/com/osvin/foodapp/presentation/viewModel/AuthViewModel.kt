@@ -5,68 +5,66 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.auth.FirebaseUser
 import com.osvin.foodapp.data.models.User
-import com.osvin.foodapp.data.repository.AuthorizationRepository
+import com.osvin.foodapp.data.repository.AppRepository
 import kotlinx.coroutines.launch
 
 class AuthViewModel(private val app: Application): AndroidViewModel(app) {
 
-   // private lateinit var repository: AuthorizationRepository
-   // private lateinit var _firebaseUserLiveData: MutableLiveData<FirebaseUser>
-  //  var firebaseUserLiveData: LiveData<FirebaseUser> = _firebaseUserLiveData
-   // private lateinit var _userLoggedMutableLiveData: MutableLiveData<Boolean>
-  //  var userLoggedMutableLiveData: LiveData<Boolean> = _userLoggedMutableLiveData
+    private val repository = AppRepository(app)
 
-    private val repository = AuthorizationRepository(app)
-    private lateinit var _resultRegister : MutableLiveData<Boolean>
-    var resultRegister: LiveData<Boolean> = _resultRegister
-    private lateinit var _resultLogin: MutableLiveData<Boolean>
-    var resultLogin: LiveData<Boolean> = _resultLogin
-    private lateinit var _id: MutableLiveData<String>;
-    var id: LiveData<String> = _id
-    private lateinit var _resultVerify: MutableLiveData<Boolean>;
-    var resultVerify: LiveData<Boolean> = _resultVerify
-    private lateinit var _signOut: MutableLiveData<Boolean>;
-    var signOut: LiveData<Boolean> = _signOut
+    private var _firebaseUserLiveData: MutableLiveData<FirebaseUser> = repository._firebaseUserLiveData
+    private var firebaseUserLiveData: LiveData<FirebaseUser> = _firebaseUserLiveData
 
-    fun getUserId(): String? {
+    private var _userLiveData: MutableLiveData<User> = repository._userLiveData
+    private var userLiveData: LiveData<User> = _userLiveData
+
+    private var _resultRegister: MutableLiveData<Boolean> = repository._resultRegister
+    private var resultRegister: LiveData<Boolean> = _resultRegister
+
+    private var _resultLogin: MutableLiveData<Boolean> = repository._resultLogin
+    private var resultLogin: LiveData<Boolean> = _resultLogin
+
+    private var _signOutLiveData: MutableLiveData<Boolean> = repository._signOutLiveData
+    private var signOutLiveData: LiveData<Boolean> = _signOutLiveData
+
+    private var _resultSaveDataUser: MutableLiveData<Boolean> = repository._resultSaveDataUser
+    private var resultSaveDataUser: LiveData<Boolean> = _resultSaveDataUser
+
+//    fun getUserId(): String? {
+//        viewModelScope.launch {
+//            _id.value = repository.getCurrentUserId().toString()
+//        }
+//
+//    }
+
+    fun saveDataUser(user:User){
         viewModelScope.launch {
-            _id.value = repository.getCurrentUserId().toString()
+            repository.saveDataUser(user)
         }
-        return _id.value
     }
 
-    fun saveDataUser(user:User):Boolean{
-        var result = false
-        viewModelScope.launch {
-            result = repository.saveDataUser(user)
-        }
-        return result
-    }
-
-    fun getUserDetail():User{
-        var user = User()
+    fun getUserDetail(){
         viewModelScope.launch{
-            user = repository.getUserDetailis()
+            repository.getUserDetailis()
         }
-        return user
     }
 
     fun register(user: User){
-        _resultRegister.value = false
         viewModelScope.launch {
-            _resultRegister.value = repository.register(user)
+            repository.register(user)
         }
     }
     fun verifiedEmail(){
         viewModelScope.launch{
-            _resultVerify.value = repository.verifiedEmail()
+            repository.verifiedEmail()
         }
     }
 
     fun login(user: User) {
         viewModelScope.launch {
-           _resultLogin.value = repository.login(user)
+           repository.login(user)
         }
     }
 
