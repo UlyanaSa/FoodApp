@@ -1,6 +1,8 @@
 package com.osvin.foodapp.presentation.fragment.auth
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -10,7 +12,10 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.osvin.foodapp.R
+import com.osvin.foodapp.data.models.User
+import com.osvin.foodapp.data.repository.AppRepository
 import com.osvin.foodapp.databinding.FragmentAuthorizationBinding
+import com.osvin.foodapp.presentation.activity.ContainerMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 //@AndroidEntryPoint
@@ -28,7 +33,16 @@ class AuthorizationFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view,savedInstanceState)
-        Log.d(TAG, "onViewCreated: ")
+
+        val app = activity!!.application
+        val repository = AppRepository(app)
+        if(repository.currentUser()){
+                startActivity(Intent(context, ContainerMainActivity::class.java))
+               activity?.finish()
+        }
+
+        //repository.singOut()
+
         binding.bLoginGs.setOnClickListener {
             findNavController().navigate(R.id.action_authorization_to_login)
         }

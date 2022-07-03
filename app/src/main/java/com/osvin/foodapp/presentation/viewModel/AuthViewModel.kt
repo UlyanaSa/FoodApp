@@ -10,27 +10,24 @@ import com.osvin.foodapp.data.models.User
 import com.osvin.foodapp.data.repository.AppRepository
 import kotlinx.coroutines.launch
 
-class AuthViewModel(private val app: Application): AndroidViewModel(app) {
+class AuthViewModel(app: Application, private var repository: AppRepository): AndroidViewModel(app) {
 
-    private val repository = AppRepository(app)
 
-    private var _firebaseUserLiveData: MutableLiveData<FirebaseUser> = repository._firebaseUserLiveData
-    private var firebaseUserLiveData: LiveData<FirebaseUser> = _firebaseUserLiveData
+    private val _userLiveData by lazy {MutableLiveData<User>(User())}
+    var userLiveData: LiveData<User> = _userLiveData
 
-    private var _userLiveData: MutableLiveData<User> = repository._userLiveData
-    private var userLiveData: LiveData<User> = _userLiveData
+    private val _resultRegister by lazy {MutableLiveData<Boolean>()}
+    var resultRegister: LiveData<Boolean> = _resultRegister
 
-    private var _resultRegister: MutableLiveData<Boolean> = repository._resultRegister
-    private var resultRegister: LiveData<Boolean> = _resultRegister
+    private val _resultLogin by lazy {MutableLiveData<Boolean>()}
+    var resultLogin: LiveData<Boolean> = _resultLogin
 
-    private var _resultLogin: MutableLiveData<Boolean> = repository._resultLogin
-    private var resultLogin: LiveData<Boolean> = _resultLogin
+    private val _signOutLiveData by lazy {MutableLiveData<Boolean>()}
+    var signOutLiveData: LiveData<Boolean> = _signOutLiveData
 
-    private var _signOutLiveData: MutableLiveData<Boolean> = repository._signOutLiveData
-    private var signOutLiveData: LiveData<Boolean> = _signOutLiveData
+    private val _resultVerify by lazy {MutableLiveData<Boolean>()}
+    var resultVerify: LiveData<Boolean> = _resultVerify
 
-    private var _resultSaveDataUser: MutableLiveData<Boolean> = repository._resultSaveDataUser
-    private var resultSaveDataUser: LiveData<Boolean> = _resultSaveDataUser
 
 //    fun getUserId(): String? {
 //        viewModelScope.launch {
@@ -39,39 +36,31 @@ class AuthViewModel(private val app: Application): AndroidViewModel(app) {
 //
 //    }
 
-    fun saveDataUser(user:User){
-        viewModelScope.launch {
-            repository.saveDataUser(user)
-        }
-    }
+//    fun saveDataUser(user:User){
+//        _resultSaveDataUser.value = repository.saveDataUser(user)
+//    }
 
-    fun getUserDetail(){
-        viewModelScope.launch{
-            repository.getUserDetailis()
-        }
-    }
+//    fun getUserDetail(){
+//        repository.getUserDetailis()
+//    }
 
-    fun register(user: User){
-        viewModelScope.launch {
-            repository.register(user)
-        }
+    fun register(){
+        _resultRegister.value = repository.register(_userLiveData)
     }
     fun verifiedEmail(){
-        viewModelScope.launch{
-            repository.verifiedEmail()
-        }
+        _resultVerify.value = repository.verifiedEmail()
+
     }
 
-    fun login(user: User) {
-        viewModelScope.launch {
-           repository.login(user)
-        }
+    fun login() {
+        _resultLogin.value = repository.login(_userLiveData)
     }
 
     fun singOut(){
-        viewModelScope.launch {
-            repository.singOut()
-        }
+        repository.singOut()
     }
 
 }
+
+
+

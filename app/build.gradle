@@ -65,8 +65,8 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.4.2")
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
     //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
    // implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -75,6 +75,12 @@ dependencies {
     //Navigation. версия 2.4.1 нормально не компилирует аргументы!!!!
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
+    //network
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
 
 
     // Hilt

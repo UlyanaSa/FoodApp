@@ -6,10 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.osvin.foodapp.data.repository.AppRepository
 import java.security.InvalidParameterException
 
-class AuthViewModelFactory(private val app: Application, private var repository: AppRepository):ViewModelProvider.Factory {
+class HomeViewModelFactory(private val app: Application, private var repository: AppRepository):
+    ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(AuthViewModel::class.java)){
-            return AuthViewModel(app, repository) as T
+        if(modelClass.isAssignableFrom(HomeViewModel::class.java)){
+            return HomeViewModel(app, repository) as T
         }
         throw InvalidParameterException("invalid constructor")
     }

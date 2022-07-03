@@ -5,15 +5,21 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.osvin.foodapp.R
 import com.osvin.foodapp.data.models.User
+import com.osvin.foodapp.data.repository.AppRepository
 import com.osvin.foodapp.databinding.FragmentLoginBinding
+import com.osvin.foodapp.databinding.FragmentRegisterBinding
 import com.osvin.foodapp.presentation.activity.ContainerMainActivity
 import com.osvin.foodapp.presentation.viewModel.AuthViewModel
 import com.osvin.foodapp.presentation.viewModel.AuthViewModelFactory
@@ -28,27 +34,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
-
         val app = activity!!.application
-        authViewModel = ViewModelProvider(this, AuthViewModelFactory(app)).get(AuthViewModel::class.java)
+        val repository = AppRepository(app)
+        authViewModel = ViewModelProvider(this, AuthViewModelFactory(app, repository))[AuthViewModel::class.java]
 
-
-        val email = binding.edtLoginAl.toString()
-        val password = binding.edtPasswordAl.toString()
-
-
+        authViewModel.userLiveData.observe(viewLifecycleOwner, Observer {
+            it.email = binding.edtLoginAl.toString()
+            it.password = binding.edtPasswordAl.toString()
+        })
 
         binding.bLoginAl.setOnClickListener {
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                var user = User(email = email, password = password)
-                authViewModel.login(user)
-                authViewModel.resultLogin.observe(viewLifecycleOwner, Observer{
-                    if(it){
-                        authViewModel.verifiedEmail()
-                    }else Log.e(TAG, "onViewCreated: login", )
-                })
-                
-            }
+                authViewModel.login()
+                userLoggedInSuccess()
 
         }
         binding.tRegister.setOnClickListener {
@@ -69,8 +66,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         imm.hideSoftInputFromWindow(view?.windowToken, 0)
     }
 
-    fun userLoggedInSuccess(user: User){
-        Log.i(TAG, "userLoggedInSuccess: ${user.email}")
+    fun userLoggedInSuccess(){
+        Log.i(TAG, "userLoggedInSuccess")
         startActivity(Intent(context, ContainerMainActivity::class.java))
         activity?.finish()
     }
