@@ -28,6 +28,10 @@ class AuthViewModel(app: Application, private var repository: AppRepository): An
     private val _resultVerify by lazy {MutableLiveData<Boolean>()}
     var resultVerify: LiveData<Boolean> = _resultVerify
 
+    private val _resultCurrentUser by lazy {MutableLiveData<Boolean>()}
+    var resultCurrentUser: LiveData<Boolean> = _resultCurrentUser
+
+
 
 //    fun getUserId(): String? {
 //        viewModelScope.launch {
@@ -58,6 +62,10 @@ class AuthViewModel(app: Application, private var repository: AppRepository): An
 
     fun singOut(){
         repository.singOut()
+    }
+
+    fun getCurrentUser(){
+        _resultCurrentUser.value = repository.currentUser()
     }
 
 }

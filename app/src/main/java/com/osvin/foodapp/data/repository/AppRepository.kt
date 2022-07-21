@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.osvin.foodapp.R
+import com.osvin.foodapp.data.db.FoodDatabase
 import com.osvin.foodapp.data.models.User
 import com.osvin.foodapp.utils.Constants
 
@@ -17,6 +18,8 @@ class AppRepository(private var app: Application) {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private var mFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var firebaseUser: FirebaseUser //= auth.currentUser
+   // private var foodDatabase:FoodDatabase = FoodDatabase.getInstance(app)
+
 
 
     fun currentUser():Boolean{
@@ -24,6 +27,7 @@ class AppRepository(private var app: Application) {
         if(auth.currentUser != null){
             firebaseUser = auth.currentUser!!
             result = true
+            Toast.makeText(app, "Hello, ${firebaseUser!!.email.toString()}", Toast.LENGTH_SHORT)
         }
         else{
             Toast.makeText(app, "Authorisation please", Toast.LENGTH_SHORT)
@@ -51,7 +55,7 @@ class AppRepository(private var app: Application) {
     fun getUserDetailis ():MutableLiveData<User>{
         val user = MutableLiveData<User>()
             mFireStore.collection(Constants.USERS)
-                .document(firebaseUser.uid)
+                .document(firebaseUser!!.uid)
                 .get()
                 .addOnSuccessListener { document ->
                     Log.i(TAG, "getUserDetailis: ${document.toString()}")

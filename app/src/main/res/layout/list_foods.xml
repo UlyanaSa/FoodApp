@@ -2,7 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="190dp"
-    android:layout_height="210dp"
+    android:layout_height="230dp"
+
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
@@ -56,31 +57,7 @@
                 app:layout_constraintHorizontal_bias="0.872"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageButton
-                android:id="@+id/b_like_food"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginBottom="152dp"
-                android:background="@drawable/boxed_icons"
-                android:src="@drawable/ic_likes_white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.891"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-            <ImageButton
-                android:id="@+id/b_basket"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/container_ic_basket"
-                android:src="@drawable/ic_basket_white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.891"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
